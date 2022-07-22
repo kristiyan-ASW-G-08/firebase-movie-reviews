@@ -10,7 +10,6 @@ import { getFirestore, addDoc, collection } from 'firebase/firestore';
 import NotificationContext from '../../context/NotificationContext';
 
 export const ReviewForm: FC<{ movieId: number }> = ({ movieId }) => {
-  const navigate = useNavigate();
   const matches = useMediaQuery('(min-width:600px)');
   const database = getFirestore();
   const reviewsRef = collection(database, 'reviews');
@@ -64,6 +63,7 @@ export const ReviewForm: FC<{ movieId: number }> = ({ movieId }) => {
         </Grid>
         <Grid item width={'100%'}>
           <TextField
+            data-testid="content"
             name="content"
             label="Enter your review"
             variant="filled"

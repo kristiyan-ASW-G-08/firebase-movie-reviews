@@ -7,8 +7,9 @@ import { Button, CardActionArea, CardActions, Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 const MovieCard: FC<any> = ({ movie, type }) => {
+
   return (
-    <Grid item>
+    <Grid item data-testid={`id-${movie.id}`}>
       <Card sx={{ maxWidth: 300, minHeight: 500 }}>
         <CardActionArea>
           <CardMedia
@@ -19,7 +20,7 @@ const MovieCard: FC<any> = ({ movie, type }) => {
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              {movie.title}
+              {type === 'movie' ? movie.title : movie.name}
             </Typography>
             <Typography variant="body2" color="text.secondary">
               {movie.overview}

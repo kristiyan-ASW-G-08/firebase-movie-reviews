@@ -7,9 +7,7 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { Link, useNavigate } from 'react-router-dom';
@@ -18,10 +16,9 @@ import { red } from '@mui/material/colors';
 import { signOut } from 'firebase/auth';
 import { styled, alpha } from '@mui/material/styles';
 import { useState, useEffect } from 'react';
-import SearchIcon from '@mui/icons-material/Search';
+
 import InputBase from '@mui/material/InputBase';
 import { Autocomplete, Modal, TextField } from '@mui/material';
-import getData from '../../utilities/getData';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -77,7 +74,7 @@ const style = {
 const LogoutButtonColor = red[500];
 
 const pages = ['movies', 'shows'];
-const ResponsiveAppBar = () => {
+const Navbar = () => {
   const [isAuth, setIsAuth] = useState<boolean>(false);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [autocompleteMovies, setAutocompleteMovies] = useState<any[]>([]);
@@ -193,7 +190,6 @@ const ResponsiveAppBar = () => {
                       variant="contained"
                       style={{ backgroundColor: LogoutButtonColor }}
                     >
-                      {' '}
                       Log Out
                     </Button>
                   </MenuItem>
@@ -333,4 +329,4 @@ const ResponsiveAppBar = () => {
     </>
   );
 };
-export default ResponsiveAppBar;
+export default Navbar;

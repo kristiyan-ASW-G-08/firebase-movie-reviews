@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import getData from './utilities/getData';
 import { Box, Grid, Typography, useMediaQuery } from '@mui/material';
@@ -20,13 +19,11 @@ function App() {
   };
   useEffect(() => {
     getData('/movie/popular').then(data => {
-
       setMovies(data.results);
+      console.log(data.results);
     });
     getData('/tv/popular').then(data => {
- 
       setShows(data.results);
-  
     });
   }, []);
   return (
