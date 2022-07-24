@@ -29,6 +29,7 @@ const Movie = () => {
   const [movie, setMovie] = useState<any>();
   const [reviews, setReviews] = useState<any>();
   const { type, id } = useParams();
+  console.log(type, id);
   const database = getFirestore();
 
   const reviewsRef = collection(database, 'reviews');

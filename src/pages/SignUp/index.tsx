@@ -52,12 +52,13 @@ export const SignUpPage: FC = () => {
       >
         <Grid item>
           <Typography variant="h4" component="h2">
-            Sign Up
+            Sign Up Now
           </Typography>
           ;{' '}
         </Grid>
         <Grid item width={matches ? '50%' : '80%'}>
           <TextField
+            data-testid="username"
             name="username"
             label="Username"
             variant="filled"
@@ -71,6 +72,7 @@ export const SignUpPage: FC = () => {
 
         <Grid item width={matches ? '50%' : '80%'}>
           <TextField
+            data-testid="email"
             name="email"
             label="Email"
             variant="filled"
@@ -84,6 +86,7 @@ export const SignUpPage: FC = () => {
 
         <Grid item width={matches ? '50%' : '80%'}>
           <TextField
+            data-testid="password"
             name="password"
             label="Password"
             variant="filled"
@@ -97,7 +100,7 @@ export const SignUpPage: FC = () => {
         </Grid>
         <Grid item>
           <Button type="submit" variant="contained">
-            Submit
+            Sign Up
           </Button>
         </Grid>
       </Grid>

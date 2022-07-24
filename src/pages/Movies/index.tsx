@@ -12,7 +12,7 @@ import {
   Container,
   Box,
 } from '@mui/material';
-import React, { SyntheticEvent, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import MovieCard from '../../Components/MovieCard';
 import getData from '../../utilities/getData';
 

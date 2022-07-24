@@ -3,10 +3,7 @@ import { Formik, Form, FormikValues, useFormik } from 'formik';
 import AuthSchema from '../../validtionSchemas/AuthSchema';
 import { auth } from '../../firebase';
 import { useNavigate } from 'react-router-dom';
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import { Button, Container, Grid, TextField, Typography } from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
@@ -17,12 +14,9 @@ export const LoginPage: FC = () => {
     { email, password }: FormikValues,
     { setErrors }: any,
   ): Promise<void> => {
+    console.log(email, password);
     try {
-      const credentials = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password,
-      );
+      await signInWithEmailAndPassword(auth, email, password);
 
       navigate('/');
     } catch (error: any) {
@@ -60,6 +54,7 @@ export const LoginPage: FC = () => {
         </Grid>
         <Grid item width={matches ? '50%' : '80%'}>
           <TextField
+            data-testid="email"
             name="email"
             label="Email"
             variant="filled"
@@ -73,6 +68,7 @@ export const LoginPage: FC = () => {
 
         <Grid item width={matches ? '50%' : '80%'}>
           <TextField
+            data-testid="password"
             name="password"
             label="Password"
             variant="filled"
@@ -86,7 +82,7 @@ export const LoginPage: FC = () => {
         </Grid>
         <Grid item>
           <Button type="submit" variant="contained">
-            Submit
+            Login
           </Button>
         </Grid>
       </Grid>

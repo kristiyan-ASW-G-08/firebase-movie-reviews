@@ -1,4 +1,4 @@
-// Todo: Figure out how to mock firebase functions
+//Todo
 // import { render, screen, waitFor } from '@testing-library/react';
 // import { BrowserRouter } from 'react-router-dom';
 // import { auth } from '../../firebase';
@@ -7,10 +7,12 @@
 // import ReviewForm from '.';
 // jest.mock('../../firebase');
 // jest.mock('firebase/firestore');
-// const authMock = auth as jest.Mocked<typeof auth>;
-// const addDocMOck = addDoc as jest.MockedFunction<typeof addDoc>
 
-
+// jest.mock('firebase/firestore', () => ({
+//   addDoc: jest.fn(),
+//   collection: jest.fn(),
+//   getFirestore: jest.fn(),
+// }));
 // describe('ReviewForm', () => {
 //   jest.setTimeout(30000);
 //   afterAll(() => jest.restoreAllMocks());
@@ -24,10 +26,9 @@
 //       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
 //     const input = screen.getByTestId('content');
 //     UserEvent.type(input, value);
-//     expect(input).toHaveAttribute('value', value);
-
 //     const postButton = screen.getByText('Post');
 
 //     UserEvent.click(postButton);
+    
 //   });
 // });
